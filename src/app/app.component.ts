@@ -53,4 +53,12 @@ export class AppComponent {
       },
     },
   };
+
+  onElementCreated(element: string):void {
+    console.log('Elemento criado: ', element)
+  }
+
+
 }
+
+

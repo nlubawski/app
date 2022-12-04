@@ -1,8 +1,8 @@
     <app-header></app-header>
     <app-carousel></app-carousel>
-    <app-features [featureData]="data.features"></app-features>
-    <app-about [aboutData]="data.about"></app-about>
-    <app-address [addressData]="data.address"></app-address>
+    <app-features [featureData]="data.features" (elementCreated)="onElementCreated($event)"></app-features>
+    <app-about [aboutData]="data.about" (elementCreated)="onElementCreated($event)"></app-about>
+    <app-address [addressData]="data.address" (elementCreated)="onElementCreated($event)"></app-address>
     <app-contact></app-contact>
     <app-buttontop></app-buttontop>
     <app-footer></app-footer>

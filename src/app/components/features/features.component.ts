@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FeaturesSectionData } from 'src/models/feactures-section-data.models';
 
 @Component({
@@ -8,5 +8,9 @@ import { FeaturesSectionData } from 'src/models/feactures-section-data.models';
 })
 export class FeaturesComponent {
   @Input() public featureData!: FeaturesSectionData;
+  @Output() public elementCreated: EventEmitter<string> = new EventEmitter<string>();
 
+  ngOnInit(){
+    this.elementCreated.emit('Feature')
+  }
 }
