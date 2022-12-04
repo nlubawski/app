@@ -1,3 +1,4 @@
+import { ContactFormData } from './../models/form-data.models';
 import { Component } from '@angular/core';
 import { AppData } from 'src/models/app-data.models';
 
@@ -54,11 +55,15 @@ export class AppComponent {
     },
   };
 
-  onElementCreated(element: string):void {
-    console.log('Elemento criado: ', element)
+  onElementCreated(element: string): void {
+    console.log('Elemento criado: ', element);
   }
 
+  onContactFormSubmitted(formData: ContactFormData): void {
+    console.log('Formulario enviado com sucesso', formData);
+  }
 
+  onSearchFormSubmitted(search: string): void {
+    console.log('Você pesquisou', search);
+  }
 }
-
-

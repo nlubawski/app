@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { ContactFormData } from 'src/models/form-data.models';
 
 @Component({
@@ -7,6 +7,8 @@ import { ContactFormData } from 'src/models/form-data.models';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+  @Output() public sendForm: EventEmitter<ContactFormData> = new EventEmitter<ContactFormData>();
+
   public btnDisable = true;
   public formData: ContactFormData = {
     email: "teste@teste.com",
@@ -20,8 +22,7 @@ export class ContactComponent {
   }
 
   public submitForm(): void {
-    console.log("enviadoo")
-    console.log(this.formData)
+    this.sendForm.emit(this.formData)
   }
 
   public showInputData(event: any): void{

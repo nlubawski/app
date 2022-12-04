@@ -1,4 +1,3 @@
-import { AboutSectionData } from './../../../models/about-section-data';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AddressData } from 'src/models/address-data.models';
 
